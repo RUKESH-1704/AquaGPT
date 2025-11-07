@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="hero-section text-center mb-5">
+            <h1>Welcome to <span class="aqua">Aqua</span><span class="gpt">GPT</span></h1>
+            <p class="lead">Your AI-powered assistant for smart aquaculture management</p>
+            <div class="mt-4">
+                <a href="{{ url_for('chat') }}" class="btn btn-primary btn-lg">Start Chat</a>
+            </div>
+        </div>
+
+        <div class="row features">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h3>Smart Disease Detection</h3>
+                    <p>Upload fish images for instant disease diagnosis using advanced AI models.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h3>Expert Knowledge</h3>
+                    <p>Access comprehensive information about aquaculture management and best practices.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h3>24/7 Assistance</h3>
+                    <p>Get instant answers to your aquaculture questions anytime, anywhere.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

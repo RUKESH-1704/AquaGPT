@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="content-card">
+            <h1>Contact Us</h1>
+            <div class="contact-content">
+                <div class="contact-info mb-5">
+                    <h2>Get in Touch</h2>
+                    <p>Have questions about AquaGPT? We're here to help! Reach out to us using any of the following methods:</p>
+                </div>
+
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <h3>Email</h3>
+                        <p><a href="mailto:contact@aquagpt.com">contact@aquagpt.com</a></p>
+                    </div>
+
+                    <div class="contact-method">
+                        <h3>Location</h3>
+                        <p>Department of Computer Science<br>
+                           Your University Name<br>
+                           City, Country</p>
+                    </div>
+
+                    <div class="contact-method">
+                        <h3>Social Media</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link">LinkedIn</a>
+                            <a href="#" class="social-link">Twitter</a>
+                            <a href="#" class="social-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form mt-5">
+                    <h2>Send us a Message</h2>
+                    <form id="contact-form" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Thank you for your message! We will get back to you soon.');
+    this.reset();
+});
+</script>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Chat{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="chat-container">
+            <div class="fish-images">
+                <img src="{{ url_for('static', filename='images/fish1.jpg') }}" alt="Fish 1" class="floating-fish fish1">
+                <img src="{{ url_for('static', filename='images/fish2.jpg') }}" alt="Fish 2" class="floating-fish fish2">
+                <img src="{{ url_for('static', filename='images/fish1.jpg') }}" alt="Fish 3" class="floating-fish fish3">
+            </div>
+
+            <div id="chat-messages" class="messages-container mb-4"></div>
+            
+            <div id="image-upload-container" style="display: none;" class="mb-3">
+                <div class="upload-box">
+                    <p>Upload an image for disease prediction</p>
+                    <input type="file" id="image-upload" accept=".jpg,.jpeg,.png" class="form-control">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="user-input" class="form-control" 
+                       placeholder="Ask about aquaculture management...">
+                <button class="btn btn-primary" type="button" id="send-button">
+                    Send
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const chatMessages = document.getElementById('chat-messages');
+        chatMessages.innerHTML = '<div class="bot-message message">Hi! I\'m AquaGPT. How can I help you with aquaculture management today?</div>';
+    });
+</script>
+{% endblock %}
